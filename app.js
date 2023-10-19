@@ -146,8 +146,8 @@ var whatsappapilink = `https://api.whatsapp.com/send?pgone=9199299929292&text=Or
 function whatsappapi(){
 for (let i = 0; i < items.length; i++){
   if (items[i].quantity != 0){
-    whatsappapilink += items[i].name , "%20" , items[i].quantity
+    whatsappapilink += ` ${items[i].name}  ${items[i].quantity} `
   }
 }
-whatsappapilink += `The total amount is ${finalDollars}$ and ${finalCents} cents`
+whatsappapilink += ` The total amount is ${finalDollars}$ and ${finalCents} cents`
 }
