@@ -123,7 +123,8 @@ function updatePrice() {
 
 cartButton.onclick = () => {
   updatePrice();
-
+  whatsappapi()
+  window.open(whatsappapilink, ('blank'))
 
   for (let index = 0; index < items.length; index++) {
     if (items[index].quantity != 0) {
@@ -140,3 +141,13 @@ cartButton.onclick = () => {
     "The total amount is " + finalDollars + "$ and " + finalCents + " cents"
   );
 };
+
+var whatsappapilink = `https://api.whatsapp.com/send?pgone=9199299929292&text=Order%20details`
+function whatsappapi(){
+for (let i = 0; i < items.length; i++){
+  if (items[i].quantity != 0){
+    whatsappapilink += items[i].name , "%20" , items[i].quantity
+  }
+}
+whatsappapilink += `The total amount is ${finalDollars}$ and ${finalCents} cents`
+}
